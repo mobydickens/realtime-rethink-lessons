@@ -1,0 +1,20 @@
+2019-01-07T12:17:06.639659000 0.058000s notice: Recursively removing directory /Users/megan/devmountain/react/realtime-rethink-lessons/lessons/1_timer_over_socket/client/rethinkdb_data/tmp
+2019-01-07T12:17:06.642015000 0.060360s notice: Initializing directory /Users/megan/devmountain/react/realtime-rethink-lessons/lessons/1_timer_over_socket/client/rethinkdb_data
+2019-01-07T12:17:06.642126000 0.060466s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/megan/devmountain/react/realtime-rethink-lessons/lessons/1_timer_over_socket/client/rethinkdb_data' did not already exist or is empty.)
+2019-01-07T12:17:06.642168000 0.060509s notice: Running rethinkdb 2.3.6 (CLANG 8.1.0 (clang-802.0.42))...
+2019-01-07T12:17:06.648263000 0.066604s notice: Running on Darwin 17.7.0 x86_64
+2019-01-07T12:17:06.648312000 0.066652s notice: Loading data from directory /Users/megan/devmountain/react/realtime-rethink-lessons/lessons/1_timer_over_socket/client/rethinkdb_data
+2019-01-07T12:17:06.820450000 0.238793s info: Automatically using cache size of 1105 MB
+2019-01-07T12:17:06.822060000 0.240403s notice: Listening for intracluster connections on port 29015
+2019-01-07T12:17:06.824950000 0.243293s notice: Listening for client driver connections on port 28015
+2019-01-07T12:17:06.825093000 0.243435s notice: Listening for administrative HTTP connections on port 8080
+2019-01-07T12:17:06.825101000 0.243443s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2019-01-07T12:17:06.825111000 0.243453s notice: Listening on driver addresses: 127.0.0.1, ::1
+2019-01-07T12:17:06.825114000 0.243456s notice: Listening on http addresses: 127.0.0.1, ::1
+2019-01-07T12:17:06.825123000 0.243465s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-01-07T12:17:06.825131000 0.243473s notice: Server ready, "Parkers_MacBook_Retina_local_gfs" efe3345e-e1af-44eb-babb-1a331d61fec6
+2019-01-07T12:18:02.370528000 55.789470s notice: Server got SIGINT from pid 2402, uid 504; shutting down...
+2019-01-07T12:18:02.370770000 55.789711s notice: Shutting down client connections...
+2019-01-07T12:18:02.370907000 55.789849s notice: All client connections closed.
+2019-01-07T12:18:02.370920000 55.789861s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2019-01-07T12:18:02.374508000 55.793450s notice: Storage engine shut down.

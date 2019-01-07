@@ -20,6 +20,29 @@ function subscribeToDrawings({ client, connection }) {
   });
 }
 
+function handleLinePublish({connection, line}) {
+  r.table('lines')
+  .insert(Object.assign(line, { timestamp: new Date()}))
+  .run(connection);
+}
+
+function subscribeToDrawingLines({ client, connection, drawingId, from}) {
+  let query = r.row('drawingId').eq(drawingId);
+  if (from) {
+    query = query.and(
+      r.row('timestamp'.ge(new Date(from)))
+    );
+  }
+
+  return r.table('lines')
+  .filter(query)
+  .changes({ include_initial: true })
+  .run(connection)
+  .then((cursor) => {
+    cursor.each((err, lineRow) => 
+      client.emit(`drawingLine:${drawingId}`, lineRow.new_val))
+  });
+}
 
 r.connect({
   host: 'localhost',
@@ -35,11 +58,23 @@ r.connect({
       client,
       connection,
     }));
+    client.on('publishLine', (line) => handleLinePublish({
+      line,
+      connection
+    }))
+    client.on('subscribeToDrawingLines', ({drawingId, from}) => {
+      subscribeToDrawingLines({
+        client,
+        connection,
+        drawingId,
+        from
+      })
+    })
   });
 });
 
 
-const port = 8000;
+const port = parseInt(process.argv[2], 10) || 8000;
 io.listen(port);
 console.log('listening on port ', port);
 
